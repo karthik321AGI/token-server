@@ -11,8 +11,22 @@ const app = express();
 const ALLOWED_ORIGINS = [
   'http://localhost:3000',
   'http://localhost:5500',
-  'http://127.0.0.1:5500'
+  'http://127.0.0.1:5500',
+  'https://aspitalks-livekit.vercel.app',
+  'https://aspitalks-livekit-git-master-karthiks-projects-b3a1f53f.vercel.app',
+  'https://aspitalks-livekit-lp2lriv8u-karthiks-projects-b3a1f53f.vercel.app'
 ];
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin || ALLOWED_ORIGINS.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 
 app.use(cors({
   origin: function(origin, callback) {
