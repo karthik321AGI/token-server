@@ -14,7 +14,8 @@ const ALLOWED_ORIGINS = [
   'http://127.0.0.1:5500',
   'https://aspitalks-livekit.vercel.app',
   'https://aspitalks-livekit-git-master-karthiks-projects-b3a1f53f.vercel.app',
-  'https://aspitalks-livekit-lp2lriv8u-karthiks-projects-b3a1f53f.vercel.app'
+  'https://aspitalks-livekit-lp2lriv8u-karthiks-projects-b3a1f53f.vercel.app',
+  'render-livkitserver.onrender.com'
 ];
 
 app.use(cors({
