@@ -9,17 +9,18 @@ const app = express();
 
 // Update this after getting your Vercel deployment URL
 const ALLOWED_ORIGINS = [
+  'https://aspitalks-livekit.vercel.app',
   'http://localhost:3000',
   'http://localhost:5500',
   'http://127.0.0.1:5500',
-  'https://aspitalks-livekit.vercel.app',
   'https://aspitalks-livekit-git-master-karthiks-projects-b3a1f53f.vercel.app',
   'https://aspitalks-livekit-lp2lriv8u-karthiks-projects-b3a1f53f.vercel.app',
-  'render-livkitserver.onrender.com'
+  'http://34.100.253.143',
+  'https://34.100.253.143'
 ];
 
 app.use(cors({
-  origin: function(origin, callback) {
+  origin: function (origin, callback) {
     if (!origin || ALLOWED_ORIGINS.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
@@ -30,7 +31,7 @@ app.use(cors({
 }));
 
 app.use(cors({
-  origin: function(origin, callback) {
+  origin: function (origin, callback) {
     if (!origin || ALLOWED_ORIGINS.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
